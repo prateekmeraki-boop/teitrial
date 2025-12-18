@@ -11,7 +11,6 @@ import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils.js";
-import { ArrowRight, Github, Star } from "lucide-react";
 
 // ============================================================================
 // BEAMS COMPONENT (3D Background)
