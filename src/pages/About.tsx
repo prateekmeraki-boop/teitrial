@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, Users, Target, Zap } from 'lucide-react';
 
 export default function About() {

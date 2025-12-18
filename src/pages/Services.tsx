@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Smartphone, Cloud, Brain, Check } from 'lucide-react';
 
 export default function Services() {

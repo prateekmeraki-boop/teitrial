@@ -1,5 +1,3 @@
-import { Github } from "lucide-react";
-
 const links = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
