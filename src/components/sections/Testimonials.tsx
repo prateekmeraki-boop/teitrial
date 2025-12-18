@@ -1,45 +1,38 @@
-import { Star } from "lucide-react";
-
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "Tech Einnovation transformed our business with their exceptional software and mobile app development services. Their expertise in AI and cloud solutions is unmatched. Highly recommend!",
-      author: "Shawn Lee",
-      role: "CEO, Tech Startup",
-      initials: "SL",
-      rating: 5,
+      name: 'Shawn Lee',
+      role: 'CEO, Tech Startup',
+      image: 'SL',
+      testimonial: 'Tech Einnovation transformed our business with their exceptional software and mobile app development services. Their expertise in AI and cloud solutions is unmatched. Highly recommend!',
+      rating: 5
     },
     {
-      text: "Outstanding service and professional team. They delivered our project on time and exceeded our expectations. The communication throughout was excellent and they truly care about client success.",
-      author: "Sarah Johnson",
-      role: "Product Manager",
-      initials: "SJ",
-      rating: 5,
-    },
+      name: 'Sarah Johnson',
+      role: 'Product Manager',
+      image: 'SJ',
+      testimonial: 'Outstanding service and professional team. They delivered our project on time and exceeded our expectations. The communication throughout was excellent and they truly care about client success.',
+      rating: 5
+    }
   ];
 
   return (
-    <section id="testimonials" className="py-20 flex items-center" style={{ backgroundColor: '#0f1114' }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
+    <div id="testimonials" className="min-h-screen bg-black py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          {/* Accent Line with Large Heading in Mint */}
-          <div className="flex items-center justify-center mb-6">
-            <div className="w-12 h-1" style={{ backgroundColor: '#a5d0a8' }} />
-            <h2 className="text-4xl font-bold mx-6" style={{ color: '#a5d0a8' }}>Testimonials</h2>
-            <div className="w-12 h-1" style={{ backgroundColor: '#a5d0a8' }} />
-          </div>
-
-          <p className="text-xl text-gray-100">
-            What Our Clients Say
-          </p>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <span className="text-[#a5d0a8]">Testimonials</span>
+          </h2>
+          <p className="text-xl text-gray-300">What Our Clients Say</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {testimonials.map((testimonial, idx) => (
             <div
-              key={index}
-              className="group relative rounded-lg p-8 backdrop-blur-xl border transition-all duration-300 flex flex-col hover:shadow-2xl"
-              style={{ 
+              key={idx}
+              className="group relative rounded-lg overflow-hidden backdrop-blur-xl border transition-all duration-300 flex flex-col h-full hover:shadow-2xl"
+              style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                 borderColor: 'rgba(255, 255, 255, 0.2)',
               }}
@@ -52,48 +45,73 @@ export default function Testimonials() {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              {/* Top Border Accent */}
-              <div 
-                className="w-12 h-1 mb-6 transition-all duration-300 group-hover:w-full"
-                style={{ backgroundColor: '#a5d0a8' }}
-              />
-
-              {/* Star Rating */}
-              <div className="flex items-center gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={20} fill="#a5d0a8" style={{ color: '#a5d0a8' }} />
-                ))}
-              </div>
-
-              {/* Testimonial Text */}
-              <p className="text-lg text-gray-100 mb-8 flex-grow italic leading-relaxed">
-                "{testimonial.text}"
-              </p>
-
-              {/* Author Info with Avatar */}
-              <div className="flex items-center gap-4 pt-6 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
-                {/* Author Avatar with Initials */}
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                {/* Accent Line */}
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold border-2 transition-transform duration-300 group-hover:scale-110"
-                  style={{ 
-                    backgroundColor: '#a5d0a8',
-                    color: '#0f1114',
-                    borderColor: '#a5d0a8'
-                  }}
-                >
-                  {testimonial.initials}
+                  className="w-12 h-1 mb-4 transition-all duration-300 group-hover:w-full"
+                  style={{ backgroundColor: '#a5d0a8' }}
+                ></div>
+
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} style={{ color: '#a5d0a8' }} className="text-lg">
+                      ★
+                    </span>
+                  ))}
                 </div>
 
-                {/* Author Details */}
-                <div>
-                  <h4 className="text-lg font-bold text-white">{testimonial.author}</h4>
-                  <p style={{ color: '#a5d0a8' }} className="text-sm font-medium">{testimonial.role}</p>
+                {/* Quote */}
+                <p className="text-gray-200 text-lg mb-6 flex-grow italic">
+                  "{testimonial.testimonial}"
+                </p>
+
+                {/* Client Info */}
+                <div className="flex items-center gap-4">
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-black text-lg"
+                    style={{ backgroundColor: '#a5d0a8' }}
+                  >
+                    {testimonial.image}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold group-hover:text-[#a5d0a8] transition-colors">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* CTA Section */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <div
+            className="backdrop-blur-xl border rounded-2xl p-12 text-center transition-all duration-300"
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              borderColor: 'rgba(165, 208, 168, 0.5)',
+            }}
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Join Our Success Stories?</h2>
+            <p className="text-gray-300 mb-8 text-lg">
+              Let's work together to transform your business and create your own success story.
+            </p>
+            <button
+              style={{
+                backgroundColor: '#a5d0a8',
+                color: 'black',
+              }}
+              className="inline-block font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Get Started Today
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

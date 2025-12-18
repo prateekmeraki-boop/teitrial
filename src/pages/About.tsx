@@ -32,7 +32,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f1114] via-[#1a1d22] to-[#0f1114]">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
       <div className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

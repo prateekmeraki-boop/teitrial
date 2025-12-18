@@ -37,8 +37,9 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Innovative Tech Solutions for Your Business
+              <span className="text-[#a5d0a8]">Innovative Tech Solutions for Your Business</span>
             </h1>
+
 
             {/* Subtitle */}
             <p className="mb-10 text-lg leading-8 text-white/80 sm:text-xl lg:text-2xl max-w-3xl mx-auto">
@@ -62,25 +63,37 @@ export default function Hero() {
           </div>
 
           {/* Service Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="rounded-lg p-8 backdrop-blur-xl border transition-all hover:shadow-lg"
-                style={{ 
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)'
-                }}
-              >
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-200 text-lg">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Service Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-6 max-w-4xl mx-auto">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className="rounded-lg p-8 backdrop-blur-xl border transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        borderColor: "rgba(255, 255, 255, 0.2)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+        e.currentTarget.style.borderColor = "rgba(165, 208, 168, 0.4)";
+        e.currentTarget.style.boxShadow = "0 0 30px rgba(165, 208, 168, 0.2)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+        e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-a5d0a8 transition-colors duration-300">
+        {service.title}
+      </h3>
+      <p className="text-gray-200 text-lg group-hover:text-gray-100 transition-colors duration-300">
+        {service.description}
+      </p>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </section>
