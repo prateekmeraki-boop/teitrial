@@ -14,7 +14,7 @@ export default function NavBar() {
           {/* Brand - Logo */}
           <div className="flex items-center">
             <img 
-              src="/src/assets/logo.png" 
+              src="/logo.png" 
               alt="Tech eInnovation Logo" 
               className="h-10 w-auto object-contain"
             />

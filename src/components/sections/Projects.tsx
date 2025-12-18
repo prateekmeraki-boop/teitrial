@@ -3,13 +3,13 @@ import { Code2, Smartphone, ArrowRight } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      image: "/src/assets/software-dev.jpg",
+      image: "/software-dev.jpg",
       title: "Software Development",
       description: "Custom solutions tailored to meet your business needs effectively.",
       icon: Code2,
     },
     {
-      image: "/src/assets/mobile-apps.jpg",
+      image: "/mobile-apps.jpg",
       title: "Mobile Apps",
       description: "Engaging mobile applications designed for user-friendly experiences.",
       icon: Smartphone,

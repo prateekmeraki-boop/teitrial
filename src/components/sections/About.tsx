@@ -60,7 +60,7 @@ export default function About() {
             }}
           >
             <img 
-              src="/src/assets/logo.png" 
+              src="/logo.png" 
               alt="Tech eInnovation Logo" 
               className="w-72 h-72 object-contain transition-transform duration-500 group-hover:scale-110"
             />

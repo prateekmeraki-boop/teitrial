@@ -3,19 +3,19 @@ import { Cloud, Brain, BookOpen, ArrowRight } from "lucide-react";
 export default function Services() {
   const services = [
     {
-      image: "/src/assets/cloud-services.jpg",
+      image: "/cloud-services.jpg",
       title: "Cloud Services",
       description: "Reliable cloud solutions tailored to enhance your business operations and efficiency.",
       icon: Cloud,
     },
     {
-      image: "/src/assets/ai-ml.jpg",
+      image: "/ai-ml.jpg",
       title: "AI & ML",
       description: "Harness the power of AI and machine learning to drive innovation in your projects.",
       icon: Brain,
     },
     {
-      image: "/src/assets/training.jpg",
+      image: "/training.jpg",
       title: "Industrial Training",
       description: "Expert training programs for individuals and teams to excel in technology and innovation.",
       icon: BookOpen,
