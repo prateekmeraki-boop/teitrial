@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav
       className="fixed top-0 w-full z-50 backdrop-blur-md border-b"
       style={{
-        backgroundColor: 'rgba(12, 33, 67, 0.9)',
+        backgroundColor: 'rgba(0, 21, 30, 0.4)',
         borderColor: 'rgba(44, 158, 216, 0.3)',
       }}
     >
