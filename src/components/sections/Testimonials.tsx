@@ -1,117 +1,109 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Shawn Lee',
-      role: 'CEO, Tech Startup',
-      image: 'SL',
-      testimonial: 'Tech Einnovation transformed our business with their exceptional software and mobile app development services. Their expertise in AI and cloud solutions is unmatched. Highly recommend!',
-      rating: 5
+      stars: 5,
+      quote: "Tech Einnovation transformed our business with their exceptional software and mobile app development services.",
+      author: "Shawn Lee",
+      title: "CEO, Tech Startup",
+      initials: "SL",
     },
     {
-      name: 'Sarah Johnson',
-      role: 'Product Manager',
-      image: 'SJ',
-      testimonial: 'Outstanding service and professional team. They delivered our project on time and exceeded our expectations. The communication throughout was excellent and they truly care about client success.',
-      rating: 5
-    }
+      stars: 5,
+      quote: "Outstanding service and professional team. They delivered our project on time and exceeded our expectations.",
+      author: "Sarah Johnson",
+      title: "Product Manager",
+      initials: "SJ",
+    },
   ];
 
   return (
-    <div id="testimonials" className="min-h-screen bg-black py-20">
+    <section
+      id="testimonials"
+      className="min-h-screen py-20"
+      style={{ backgroundColor: "#0c2143" }}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            <span className="text-[#a5d0a8]">Testimonials</span>
+          <h2
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ color: "#FFFFFF" }}
+          >
+            Testimonials
           </h2>
-          <p className="text-xl text-gray-300">What Our Clients Say</p>
+          <p
+            className="text-xl"
+            style={{ color: "rgba(255, 255, 255, 0.8)" }}
+          >
+            What Our Clients Say
+          </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {testimonials.map((testimonial, index) => (
             <div
-              key={idx}
-              className="group relative rounded-lg overflow-hidden backdrop-blur-xl border transition-all duration-300 flex flex-col h-full hover:shadow-2xl"
+              key={index}
+              className="rounded-lg p-8 backdrop-blur-xl border transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                borderColor: 'rgba(255, 255, 255, 0.2)',
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(165, 208, 168, 0.6)';
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(165, 208, 168, 0.3)';
+                e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+                e.currentTarget.style.borderColor = "rgba(44, 158, 216, 0.4)";
+                e.currentTarget.style.boxShadow = "0 0 30px rgba(44, 158, 216, 0.2)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
-              {/* Content */}
-              <div className="p-8 flex flex-col flex-grow">
-                {/* Accent Line */}
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.stars)].map((_, i) => (
+                  <span key={i} style={{ color: "#2c9ed8" }}>
+                    ★
+                  </span>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p
+                className="text-lg mb-6"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                "{testimonial.quote}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
                 <div
-                  className="w-12 h-1 mb-4 transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: '#a5d0a8' }}
-                ></div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} style={{ color: '#a5d0a8' }} className="text-lg">
-                      ★
-                    </span>
-                  ))}
+                  className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg"
+                  style={{
+                    backgroundColor: "#2c9ed8",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  {testimonial.initials}
                 </div>
-
-                {/* Quote */}
-                <p className="text-gray-200 text-lg mb-6 flex-grow italic">
-                  "{testimonial.testimonial}"
-                </p>
-
-                {/* Client Info */}
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-black text-lg"
-                    style={{ backgroundColor: '#a5d0a8' }}
+                <div>
+                  <p
+                    className="font-semibold"
+                    style={{ color: "#FFFFFF" }}
                   >
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h3 className="text-white font-semibold group-hover:text-[#a5d0a8] transition-colors">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                  </div>
+                    {testimonial.author}
+                  </p>
+                  <p
+                    style={{ color: "rgba(255, 255, 255, 0.7)" }}
+                  >
+                    {testimonial.title}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <div className="max-w-4xl mx-auto mt-20">
-          <div
-            className="backdrop-blur-xl border rounded-2xl p-12 text-center transition-all duration-300"
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
-              borderColor: 'rgba(165, 208, 168, 0.5)',
-            }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Join Our Success Stories?</h2>
-            <p className="text-gray-300 mb-8 text-lg">
-              Let's work together to transform your business and create your own success story.
-            </p>
-            <button
-              style={{
-                backgroundColor: '#a5d0a8',
-                color: 'black',
-              }}
-              className="inline-block font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Get Started Today
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }

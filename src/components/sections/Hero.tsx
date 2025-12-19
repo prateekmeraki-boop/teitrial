@@ -37,7 +37,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              <span className="text-[#a5d0a8]">Innovative Tech Solutions for Your Business</span>
+              <span className="text-[#2c9ed8]">Innovative Tech Solutions for Your Business</span>
             </h1>
 
 

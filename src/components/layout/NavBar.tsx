@@ -1,75 +1,202 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Testimonials', href: '#testimonials' },
-];
-
-export default function NavBar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative z-20 w-full bg-black/50 backdrop-blur-xl border-b border-white/10">
+    <nav
+      className="fixed top-0 w-full z-50 backdrop-blur-xl border-b"
+      style={{
+        backgroundColor: "rgba(12, 33, 67, 0.8)",
+        borderColor: "rgba(44, 158, 216, 0.2)",
+      }}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Brand - Logo */}
-          <div className="flex items-center">
-            <img src="/logo.png" alt="Tech eInnovation Logo" className="h-10 w-auto object-contain" />
-          </div>
+        <div className="flex items-center justify-between h-16">
+          {/* Logo - Larger */}
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo2.png"
+              alt="Tech eInnovation Logo"
+              className="h-14 w-14"
+            />
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 p-1">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="group relative overflow-hidden rounded-full px-4 py-2 text-sm font-medium text-white/90 transition-all hover:text-white"
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Home Link */}
+            <Link to="/#home" className="group relative overflow-hidden">
+              <span
+                className="relative z-10 transition-colors group-hover:text-[#2c9ed8]"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                <span className="relative z-10">{link.label}</span>
-                <div className="absolute inset-0 -top-2 -bottom-2 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </a>
-            ))}
+                Home
+              </span>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2c9ed8] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              />
+            </Link>
+
+            {/* About Link */}
+            <Link to="/#about" className="group relative overflow-hidden">
+              <span
+                className="relative z-10 transition-colors group-hover:text-[#2c9ed8]"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                About
+              </span>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2c9ed8] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              />
+            </Link>
+
+            {/* Projects Link */}
+            <Link to="/#projects" className="group relative overflow-hidden">
+              <span
+                className="relative z-10 transition-colors group-hover:text-[#2c9ed8]"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Projects
+              </span>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2c9ed8] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              />
+            </Link>
+
+            {/* Services Link */}
+            <Link to="/#services" className="group relative overflow-hidden">
+              <span
+                className="relative z-10 transition-colors group-hover:text-[#2c9ed8]"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Services
+              </span>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2c9ed8] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              />
+            </Link>
+
+            {/* Testimonials Link */}
+            <Link to="/#testimonials" className="group relative overflow-hidden">
+              <span
+                className="relative z-10 transition-colors group-hover:text-[#2c9ed8]"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Testimonials
+              </span>
+              <div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2c9ed8] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              />
+            </Link>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center space-x-4">
-            {/* Contact Us Button - Hidden on very small screens */}
-            <a
-              href="#contact"
-              className="hidden sm:inline-block group relative overflow-hidden rounded-full inline-flex items-center justify-center font-medium transition-all bg-white text-black hover:bg-gray-100 px-4 py-2 text-sm"
+          {/* Contact Button with Hover Animation */}
+          <Link to="/#contact" className="hidden md:block">
+            <button
+              className="group relative overflow-hidden rounded-lg px-6 py-2 font-semibold transition-all"
+              style={{
+                backgroundColor: "#2c9ed8",
+                color: "#FFFFFF",
+              }}
             >
               <span className="relative z-10">Contact Us</span>
-              <div className="absolute inset-0 -top-2 -bottom-2 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-            </a>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              <div
+                className="absolute inset-0 -top-1 -bottom-1 skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent)",
+                }}
+              />
             </button>
-          </div>
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden"
+            style={{ color: "#FFFFFF" }}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-white/5 border-t border-white/10 rounded-b-lg py-4 px-4 space-y-2">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-colors font-medium"
-                onClick={() => setIsOpen(false)}
+          <div
+            className="md:hidden pb-4 space-y-4"
+            style={{ backgroundColor: "rgba(12, 33, 67, 0.95)" }}
+          >
+            {/* Mobile Home Link */}
+            <Link to="/#home">
+              <div
+                className="px-4 py-2 hover:text-[#2c9ed8] transition-colors"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                {link.label}
-              </a>
-            ))}
+                Home
+              </div>
+            </Link>
+
+            {/* Mobile About Link */}
+            <Link to="/#about">
+              <div
+                className="px-4 py-2 hover:text-[#2c9ed8] transition-colors"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                About
+              </div>
+            </Link>
+
+            {/* Mobile Projects Link */}
+            <Link to="/#projects">
+              <div
+                className="px-4 py-2 hover:text-[#2c9ed8] transition-colors"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Projects
+              </div>
+            </Link>
+
+            {/* Mobile Services Link */}
+            <Link to="/#services">
+              <div
+                className="px-4 py-2 hover:text-[#2c9ed8] transition-colors"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Services
+              </div>
+            </Link>
+
+            {/* Mobile Testimonials Link */}
+            <Link to="/#testimonials">
+              <div
+                className="px-4 py-2 hover:text-[#2c9ed8] transition-colors"
+                style={{ color: "rgba(255, 255, 255, 0.9)" }}
+              >
+                Testimonials
+              </div>
+            </Link>
+
+            {/* Mobile Contact Button */}
+            <Link to="/#contact">
+              <button
+                className="w-full group relative overflow-hidden rounded-lg px-4 py-2 font-semibold transition-all"
+                style={{
+                  backgroundColor: "#2c9ed8",
+                  color: "#FFFFFF",
+                }}
+              >
+                <span className="relative z-10">Contact Us</span>
+                <div
+                  className="absolute inset-0 -top-1 -bottom-1 skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+                  style={{
+                    background:
+                      "linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent)",
+                  }}
+                />
+              </button>
+            </Link>
           </div>
         )}
       </div>

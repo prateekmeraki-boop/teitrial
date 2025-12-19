@@ -393,7 +393,7 @@ const Beams: FC<BeamsProps> = ({
         },
         material: { fog: true },
         uniforms: {
-          diffuse: new THREE.Color(...hexToNormalizedRGB("#000000")),
+          diffuse: new THREE.Color(...hexToNormalizedRGB("#030911")),
           time: { shared: true, mixed: true, linked: true, value: 0 },
           roughness: 0.3,
           metalness: 0.3,
@@ -413,7 +413,7 @@ const Beams: FC<BeamsProps> = ({
         <DirLight color={lightColor} position={[0, 3, 10]} />
       </group>
       <ambientLight intensity={1} />
-      <color attach="background" args={["#000000"]} />
+      <color attach="background" args={["#030911"]} />
       <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
     </CanvasWrapper>
   );
@@ -424,7 +424,6 @@ const Beams: FC<BeamsProps> = ({
 // ============================================================================
 
 // At the end of ethereal-beams-hero.tsx, replace the default export with:
-
 export function EtherealBeamsBackground() {
   return (
     <div className="absolute inset-0 z-0">
@@ -432,7 +431,7 @@ export function EtherealBeamsBackground() {
         beamWidth={2.5}
         beamHeight={18}
         beamNumber={15}
-        lightColor="#ffffff"
+        lightColor="1a5f99" // Changed from ffffff - darker blue shade
         speed={2.5}
         noiseIntensity={2}
         scale={0.15}
@@ -440,8 +439,4 @@ export function EtherealBeamsBackground() {
       />
     </div>
   );
-}
-
-export default function EtherealBeamsHero() {
-  // ... keep all the original code as is
 }
