@@ -18,7 +18,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-black">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-black pt-12">
       {/* Beams Background */}
       <EtherealBeamsBackground />
 
