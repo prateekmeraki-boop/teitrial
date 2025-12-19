@@ -2,7 +2,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       stars: 5,
-      quote: "Tech Einnovation transformed our business with their exceptional software and mobile app development services.",
+      quote: "Tech E-Innovation transformed our business with their exceptional software and mobile app development services.",
       author: "Shawn Lee",
       title: "CEO, Tech Startup",
       initials: "SL",
